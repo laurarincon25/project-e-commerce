@@ -1,0 +1,18 @@
+{
+    "user_email":{
+    "name":"Email",
+    "type":"email",
+    "maxLength":"255",
+    "required":"true",
+    "foreninKey":"false",
+    "dba_name":"user_email"
+},
+"user_name":{
+    "name":"Name",
+    "type":"text",
+    "maxLength":"255",
+    "required":"false",
+    "foreninKey":"false",
+    "dba_name":"user_email"
+}
+}
