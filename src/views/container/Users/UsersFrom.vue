@@ -52,18 +52,21 @@
               <v-container class="py-0">
                 <v-row>
                   <v-col
+                    v-for="(item, index) in userInput"
+                    :key="`input-${index}`"
                     cols="12"
                     md="6"
                   >
                     <v-text-field
-                      v-model="userData.person.email"
+                      v-model="userData.person[`${item.name}`]"
                       class="purple-input"
-                      :label="$t('users.dni')"
+                      :label="item.name"
+                      :type="item.type"
                       :disabled="option===2?true:false"
                     />
                   </v-col>
 
-                  <v-col
+                  <!-- <v-col
                     cols="12"
                     md="6"
                   >
@@ -129,20 +132,21 @@
                       class="purple-input"
                       :disabled="option===2?true:false"
                     />
-                  </v-col>
-                  <v-col
-                    cols="12"
-                    class="text-right"
-                  >
-                    <v-btn
-                      v-if="option!==2"
-                      color="success"
-                      class="mr-0"
-                    >
-                      {{ getTitleButton }}
-                    </v-btn>
-                  </v-col>
+                  </v-col> -->
                 </v-row>
+                <v-col
+                  cols="12"
+                  class="text-right"
+                >
+                  <v-btn
+                    v-if="option!==2"
+                    color="success"
+                    class="mr-0"
+                    @click="printData(userData.person)"
+                  >
+                    {{ getTitleButton }}
+                  </v-btn>
+                </v-col>
               </v-container>
             </v-form>
           </v-tab-item>
@@ -198,8 +202,10 @@
 <script>
   import i18n from '@/i18n'
   import { editUsers, createUsers } from '@/api/modules'
+  import userjson from './user.json'
   export default {
     data: () => ({
+      userInput: userjson.inputs,
       tabs: 0,
       option: 0,
       title: '',
@@ -243,8 +249,12 @@
     mounted () {
       // console.log($t('users.title'))
       this.initialize()
+      console.log(this.userInput)
     },
     methods: {
+      printData (data) {
+        console.log(data)
+      },
       initialize () {
         this.option = this.$route.params.option
         if (this.option === 3 || this.option === 2) {
