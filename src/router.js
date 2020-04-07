@@ -50,6 +50,22 @@ export default new Router({
           path: 'users/form',
           component: () => import('@/views/container/Users/UsersFrom'),
         },
+        {
+          name: 'UsersProfile',
+          path: 'users/profile',
+          component: () => import('@/views/container/Users/UsersProfile'),
+        },
+        // Articulos
+        {
+          name: 'Articulos',
+          path: 'articulos/articulos',
+          component: () => import('@/views/container/Articulos/Articulos'),
+        },
+        {
+          name: 'ArticulosFrom',
+          path: 'articulos/form',
+          component: () => import('@/views/container/Articulos/ArticulosForm'),
+        },
          // Roles
          {
           name: 'Roles',

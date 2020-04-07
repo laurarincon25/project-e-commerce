@@ -36,7 +36,7 @@
         multi-sort
         class="elevation-1 text-right"
       >
-        <template v-slot:item.actions="{ item }">
+        <!-- COMENTADO PO MI<template v-slot:item.actions="{ item }">
           <v-btn
             v-for="(action, i) in actions"
             :key="i"
@@ -52,7 +52,7 @@
               v-text="action.icon"
             />
           </v-btn>
-        </template>
+        </template>-->
       </v-data-table>
     </base-material-card>
 

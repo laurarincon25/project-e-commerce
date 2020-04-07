@@ -2,7 +2,7 @@
   <v-navigation-drawer
     id="core-navigation-drawer"
     v-model="drawer"
-    :dark="barColor !== 'rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)'"
+    :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
     :expand-on-hover="expandOnHover"
     :right="$vuetify.rtl"
     :src="barImage"
@@ -18,25 +18,70 @@
       />
     </template>
 
-    <v-list-item two-line>
+    <!--<v-list-item two-line>
       <v-list-item-content>
         <v-list-item-title class="text-uppercase font-weight-regular display-2">
           <span class="logo-mini">{{ $t("ct") }}</span>
           <span class="logo-normal">{{ $t("tim") }}</span>
         </v-list-item-title>
       </v-list-item-content>
-    </v-list-item>
+    </v-list-item>-->
 
     <v-divider class="mb-1" />
 
-    <!-- <v-list
+    <v-list
       dense
       nav
     >
-      <base-item-group :item="profile" />
+      <v-list-item>
+        <v-list-item-avatar
+          class="align-self-center"
+          color="white"
+          contain
+        >
+          <v-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIurr7FDLqwIPsqtECq40nVgpev1__N4DyKIfrzjBuA1d6soJc&usqp=CAU"
+            max-height="30"
+          />
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title class="text-uppercase font-weight-regular display-2">
+            <h4 class="display-2 font-weight-light mb-3 gray1--text">
+              Company Name
+            </h4>
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
 
-    <v-divider class="mb-2" /> -->
+    <v-divider class="mb-2" />
+    <v-list
+      dense
+      nav
+    >
+      <v-list-item>
+        <v-list-item-avatar
+          class="align-self-center"
+          color="white"
+          contain
+        >
+          <v-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1F37zMe2LkXt_N26ZxuV0w9EF_Rplz8KflROD_TVEXqZdnXwk&usqp=CAU"
+            max-height="30"
+          />
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title
+            class="display-1"
+            v-text="profile.title"
+          />
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+
+    <v-divider class="mb-3" />
 
     <v-list
       expand
@@ -88,7 +133,7 @@
         {
           icon: 'mdi-view-dashboard',
           title: 'dashboard',
-          to: '/dashboard',
+          to: '/home/dashboard',
         },
         {
           group: '/pages',
@@ -127,6 +172,22 @@
             {
               title: 'users.title',
               to: 'users',
+            },
+          ],
+        },
+        {
+          icon: 'mdi-account-tie',
+          title: 'Users Profile',
+          to: '/home/users/profile',
+        },
+        {
+          group: '/home/articulos',
+          icon: 'mdi-apple',
+          title: 'articulos.title',
+          children: [
+            {
+              title: 'articulos.title',
+              to: 'articulos',
             },
           ],
         },

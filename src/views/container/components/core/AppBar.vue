@@ -22,7 +22,7 @@
     </v-btn>
 
     <v-toolbar-title
-      class="hidden-sm-and-down"
+      class="hidden-sm-and-down font-weight-light"
       v-text="$route.name"
     />
 
@@ -41,6 +41,7 @@
       >
         <v-btn
           class="mt-n2"
+          elevation="1"
           fab
           small
         >
@@ -52,8 +53,10 @@
     <div class="mx-3" />
 
     <v-btn
+      class="ml-2"
       min-width="0"
       text
+      to="/home/dashboard"
     >
       <v-icon>mdi-view-dashboard</v-icon>
     </v-btn>
@@ -67,6 +70,7 @@
     >
       <template v-slot:activator="{ attrs, on }">
         <v-btn
+          class="ml-2"
           min-width="0"
           text
           v-bind="attrs"
@@ -75,6 +79,7 @@
           <v-badge
             color="red"
             overlap
+            bordered
           >
             <template v-slot:badge>
               <span class="caption">5</span>
@@ -113,6 +118,7 @@
           min-width="0"
           text
           v-bind="attrs"
+          style="backgraung:cornflowerblue"
           v-on="on"
         >
           <v-icon>mdi-account</v-icon>
@@ -134,7 +140,7 @@
           <app-bar-item
             v-else
             :key="`item-${i}`"
-            to="/"
+            to="/home/users/profile"
           >
             <v-list-item-title v-text="p.title" />
           </app-bar-item>
@@ -200,6 +206,7 @@
         { title: 'Settings' },
         { divider: true },
         { title: 'Log out' },
+
       ],
     }),
 
