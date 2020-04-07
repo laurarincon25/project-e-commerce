@@ -11,8 +11,7 @@
     >
       <template v-slot:after-heading>
         <div class="display-2 font-weight-light">
-          <!--{{ $t('articulos.title') }}-->
-          <h1>Articulos</h1>&nbsp;
+          {{ $t('articulos.title') }}
         </div>
       </template>
 
@@ -32,12 +31,17 @@
       >
         <template v-slot:activator="{ on }">
           <v-btn
-            color="general"
+            color="primary"
+            fab
             dark
+            large
+            fixed
+            right
+            bottom
             class="mb-2"
             v-on="on"
           >
-            New Articulo
+            <v-icon>mdi-plus</v-icon>
           </v-btn>
         </template>
 
@@ -63,6 +67,7 @@
                   <v-text-field
                     v-model="editedItem.cant"
                     label="Cantidad"
+                    type="number"
                   />
                 </v-col>
                 <v-col
@@ -72,7 +77,7 @@
                 >
                   <v-text-field
                     v-model="editedItem.peso"
-                    label="Peso (g)"
+                    label="Peso"
                   />
                 </v-col>
                 <v-col
@@ -102,18 +107,24 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="red darken-1"
               flat
               @click="close"
             >
-              Cancel
+              <v-icon
+                small
+                v-text="'mdi-window-close'"
+              />
             </v-btn>
             <v-btn
               color="blue darken-1"
               flat
               @click="save"
             >
-              Save
+              <v-icon
+                small
+                v-text="'mdi-content-save'"
+              />
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -134,51 +145,68 @@
             v-text="header.text"
           />
         </template>
-
-        <template v-slot:item="props">
-          <td>{{ props.item.name }}</td>
-          <td class="">
-            {{ props.item.cant }}
-          </td>
-          <td class="">
-            {{ props.item.peso }}
-          </td>
-          <td class="">
-            {{ props.item.precio }}
-          </td>
-          <td class="">
-            {{ props.item.desct }}
-          </td>
-          <td class="justify-center ">
-            <v-icon
-              medium
-              class="mr-2"
-              @click="editItem(props.item)"
-            >
-              mdi-pencil
-            </v-icon>
-            <!--<v-icon
-              medium
-              @click="deleteItem(props.item)"
-            >
-              restore
-            </v-icon>-->
-            <v-icon
-              medium
-              @click="deleteItem(props.item)"
-            >
-              mdi-delete
-            </v-icon>
-          </td>
+        <template
+          slot="headerCell"
+          slot-scope="{ header }"
+        >
+          <span
+            class="subheading font-weight-light text-general text--darken-3"
+            v-text="header.text"
+          />
         </template>
-        <template v-slot:no-data>
+
+        <template v-slot:item.actions="props">
+          <!--<v-btn
+
+            :key="2"
+            color="blue"
+            fab
+            class="px-1 ml-1"
+            x-small
+            @click="showItem(item)"
+          >
+            <v-icon
+              small
+              v-text="'mdi-eye'"
+            />
+          </v-btn>-->
+          <v-btn
+
+            :key="3"
+            color="primary"
+            fab
+            class="px-1 ml-1"
+            x-small
+            @click="editItem(props.item)"
+          >
+            <v-icon
+              small
+              v-text="'mdi-pencil'"
+            />
+          </v-btn>
+          <v-btn
+
+            :key="4"
+            color="secondary"
+            fab
+            class="px-1 ml-1"
+            x-small
+            @click="deleteItem(props.item)"
+          >
+            <v-icon
+              small
+              v-text="'mdi-delete'"
+            />
+          </v-btn>
+        </template>
+        <!--<template v-slot:no-data>
           <v-btn
             color="primary"
             @click="initialize"
           >
             Reset
           </v-btn>
-        </template>
+        </template>-->
       </v-data-table>
     </base-material-card>
   </v-container>
@@ -198,7 +226,7 @@
         { text: 'Cantidad',
           value: 'cant',
         },
-        { text: 'Peso (g)',
+        { text: 'Peso',
           value: 'peso',
         },
         { text: 'Precio (Bs)',
@@ -208,7 +236,7 @@
           value: 'desct',
         },
         { text: 'Actions',
-          value: 'name',
+          value: 'actions',
           sortable: false,
         },
       ],
@@ -317,6 +345,10 @@
       deleteItem (item) {
         const index = this.desserts.indexOf(item)
         confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      },
+
+      showItem (item) {
+
       },
 
       close () {

@@ -73,7 +73,20 @@
     "name":"Rol Name",
     "status":"Status",
     "functions":"Functions"
-  
+ },
+ "articulos":{
+  "create":"Create Articulo",
+  "edit": "Edit Articulo",
+  "show": "Sgow Articulo",
+  "close": "Cancel",
+  "save": "Save",
+  "title":"Articulos",
+  "name":"Name",
+  "cant":"Quantity",
+  "peso":"Weight",
+  "precio":"Price",
+  "desct":"Discount",
+  "actions":"Actions"
  },
   "crud":{
      "create":"Create",

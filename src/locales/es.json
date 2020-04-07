@@ -74,6 +74,20 @@
   "status":"Status",
   "functions":"Funciones"
 },
+"articulos":{
+ "create":"Crear Articulo",
+ "edit": "Editar Articulo",
+ "show": "Ver Articulo",
+ "close": "Cancelar",
+ "save": "Guardar",
+ "title":"Articulos",
+ "name":"Nombre",
+ "cant":"Cantidad",
+ "peso":"Peso",
+ "precio":"Precio",
+ "desct":"Descuento",
+ "actions":"Acciones"
+},
  "crud":{
   "create":"Crear",
   "edit":"Editar",
