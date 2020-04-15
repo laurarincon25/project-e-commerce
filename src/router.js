@@ -51,7 +51,7 @@ export default new Router({
           component: () => import('@/views/container/Users/UsersFrom'),
         },
         {
-          name: 'UsersProfile',
+          name: 'Profile',
           path: 'users/profile',
           component: () => import('@/views/container/Users/UsersProfile'),
         },

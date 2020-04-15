@@ -28,7 +28,7 @@
     </v-list-item>-->
 
     <v-divider class="mb-1" />
-
+    <!--NOMBRE Y LOGO DEL SISTEMA-->
     <v-list
       dense
       nav
@@ -55,6 +55,7 @@
       </v-list-item>
     </v-list>
 
+    <!--NOMBRE Y LOGO DEL USUARIO-->
     <v-divider class="mb-2" />
     <v-list
       dense
@@ -81,8 +82,8 @@
       </v-list-item>
     </v-list>
 
+    <!--BARRA DE AVEGACION CON OPCIONES-->
     <v-divider class="mb-3" />
-
     <v-list
       expand
       nav
@@ -177,7 +178,7 @@
         },
         {
           icon: 'mdi-account-tie',
-          title: 'Users Profile',
+          title: 'Profile',
           to: '/home/users/profile',
         },
         {
@@ -252,8 +253,8 @@
               title: this.$t('my-profile'),
             },
             {
-              to: '',
-              title: this.$t('edit-profile'),
+              to: '/home/users/profile',
+              title: this.$t('my-profile'),
             },
             {
               to: '',

@@ -88,6 +88,11 @@
  "desct":"Descuento",
  "actions":"Acciones"
 },
+"profile":{
+  "avatar": "Tania Andrew",
+  "my-profile": "Mi perfil",
+  "edit-profile": "Editar Perfil"
+ },
  "crud":{
   "create":"Crear",
   "edit":"Editar",

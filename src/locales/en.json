@@ -77,7 +77,7 @@
  "articulos":{
   "create":"Create Articulo",
   "edit": "Edit Articulo",
-  "show": "Sgow Articulo",
+  "show": "Show Articulo",
   "close": "Cancel",
   "save": "Save",
   "title":"Articulos",
@@ -87,6 +87,11 @@
   "precio":"Price",
   "desct":"Discount",
   "actions":"Actions"
+ },
+ "profile":{
+  "avatar": "Tania Andrew",
+  "my-profile": "My Profile",
+  "edit-profile": "Edit Profile"
  },
   "crud":{
      "create":"Create",
