@@ -6,11 +6,15 @@
   >
     <v-row>
       <v-col cols="12">
-        <v-carousel-item>
-          v-for="(item,i) in items"
-          :key="i"
-          :src="item.src"
-        </v-carousel-item>
+        <v-app id="inspire">
+          <v-carousel hide-delimiters>
+            <v-carousel-item
+              v-for="(item,i) in items"
+              :key="i"
+              :src="item.src"
+            />
+          </v-carousel>
+        </v-app>
       </v-col>
     </v-row>
   </v-container>
@@ -19,7 +23,6 @@
 <script>
   export default {
     name: 'HomeHome',
-
     data () {
       return {
         items: [
@@ -38,11 +41,5 @@
         ],
       }
     },
-    methods: {
-      complete (index) {
-        this.list[index] = !this.list[index]
-      },
-    },
-
   }
 </script>

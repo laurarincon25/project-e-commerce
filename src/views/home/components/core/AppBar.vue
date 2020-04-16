@@ -159,7 +159,7 @@
   import { mapState, mapMutations, mapGetters } from 'vuex'
 
   export default {
-    name: 'DashboardCoreAppBar',
+    name: 'HomeCoreAppBar',
 
     components: {
       AppBarItem: {
