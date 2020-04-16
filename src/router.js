@@ -8,6 +8,27 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/p',
+      component: () => import('@/views/home/Index'),
+      children: [
+        {
+          name: 'Home',
+          path: 'home',
+          component: () => import('@/views/home/Home'),
+        },
+        {
+          name: 'About',
+          path: 'about',
+          component: () => import('@/views/home/ii/About'),
+        },
+        {
+          name: 'Articles',
+          path: 'articles',
+          component: () => import('@/views/home/ii/Articles'),
+        },
+      ],
+    },
+    /* {
       path: '/',
       component: () => import('@/views/pages/Index'),
       children: [
@@ -28,7 +49,7 @@ export default new Router({
           component: () => import('@/views/pages/Register'),
         },
       ],
-    },
+    }, */
     {
       path: '/home',
       component: () => import('@/views/container/Index'),
