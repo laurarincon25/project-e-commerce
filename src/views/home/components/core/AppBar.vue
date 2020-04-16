@@ -1,154 +1,148 @@
 <template>
-  <v-app id="inspire">
-    <v-app-bar
-      absolute
-      app
-      color="info"
-      flat
-      height="75"
-      style="width: auto;"
+  <v-app-bar
+    absolute
+    app
+    color="info"
+    flat
+    height="75"
+    style="width: auto;"
+  >
+    <v-toolbar-title
+      style="width: 150px"
     >
-      <v-toolbar-title
-        style="width: 150px"
-      >
-        <!--LOGO DE LA EMPRESA-->
-        <v-img
-          :src="require('@/assets/img/logo1GP.png')"
-          class="mr-5"
-          contain
-          height="100"
-          width="500"
-          max-width="100"
-          @click="$vuetify.goTo(0)"
-        />
-      </v-toolbar-title>
-      <!--OPCIONES DE NAVEGACION-->
-      <div class="text-left">
-        <v-btn
-          class="ml-2"
-          min-width="0"
-          text
-          to=""
-        >
-          Home
-          <v-icon right>
-            mdi-home
-          </v-icon>
-        </v-btn>
-        <v-btn
-          class="ml-2"
-          min-width="0"
-          text
-          to=""
-        >
-          About
-          <v-icon right>
-            mdi-home-modern
-          </v-icon>
-        </v-btn>
-        <v-btn
-          class="ml-2"
-          min-width="0"
-          text
-          to=""
-        >
-          Articles
-          <v-icon right>
-            mdi-cart
-          </v-icon>
-        </v-btn>
-        <v-btn
-          class="ml-2"
-          min-width="0"
-          text
-          to=""
-        >
-          Dashboard
-          <v-icon right>
-            mdi-view-dashboard
-          </v-icon>
-        </v-btn>
-      </div>
-      <!--BUSCADOR-->
-      <v-text-field
-        flat
-        solo-inverted
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        label="Search"
-        class="hidden-sm-and-down pl-10 ml-4"
+      <!--LOGO DE LA EMPRESA-->
+      <v-img
+        :src="require('@/assets/img/logo1GP.png')"
+        class="mr-5"
+        contain
+        height="100"
+        width="500"
+        max-width="100"
+        @click="$vuetify.goTo(0)"
       />
-
-      <div class="mx-3" />
-
+    </v-toolbar-title>
+    <!--OPCIONES DE NAVEGACION-->
+    <div class="text-left">
       <v-btn
         class="ml-2"
         min-width="0"
         text
         to=""
       >
-        Sing up
+        Home
         <v-icon right>
-          mdi-account-circle
+          mdi-home
         </v-icon>
       </v-btn>
-
       <v-btn
         class="ml-2"
         min-width="0"
         text
         to=""
       >
-        Sing in
+        About
         <v-icon right>
-          mdi-account
+          mdi-home-modern
         </v-icon>
       </v-btn>
-
-      <v-menu
-        bottom
-        left
-        min-width="200"
-        offset-y
-        origin="top right"
-        transition="scale-transition"
+      <v-btn
+        class="ml-2"
+        min-width="0"
+        text
+        to=""
       >
-        <template v-slot:activator="{ attrs, on }">
-          <v-btn
-            min-width="0"
-            text
-            v-bind="attrs"
-            style="backgraung:cornflowerblue"
-            v-on="on"
-          >
-            <v-icon>mdi-account</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list
-          :tile="false"
-          flat
-          nav
+        Articles
+        <v-icon right>
+          mdi-cart
+        </v-icon>
+      </v-btn>
+      <v-btn
+        class="ml-2"
+        min-width="0"
+        text
+        to=""
+      >
+        Dashboard
+        <v-icon right>
+          mdi-view-dashboard
+        </v-icon>
+      </v-btn>
+    </div>
+    <!--BUSCADOR-->
+    <v-text-field
+      flat
+      solo-inverted
+      hide-details
+      prepend-inner-icon="mdi-magnify"
+      label="Search"
+      class="hidden-sm-and-down pl-10 ml-4"
+    />
+    <div class="mx-3" />
+    <v-btn
+      class="ml-2"
+      min-width="0"
+      text
+      to=""
+    >
+      Sing up
+      <v-icon right>
+        mdi-account-circle
+      </v-icon>
+    </v-btn>
+    <v-btn
+      class="ml-2"
+      min-width="0"
+      text
+      to=""
+    >
+      Sing in
+      <v-icon right>
+        mdi-account
+      </v-icon>
+    </v-btn>
+    <v-menu
+      bottom
+      left
+      min-width="200"
+      offset-y
+      origin="top right"
+      transition="scale-transition"
+    >
+      <template v-slot:activator="{ attrs, on }">
+        <v-btn
+          min-width="0"
+          text
+          v-bind="attrs"
+          style="backgraung:cornflowerblue"
+          v-on="on"
         >
-          <template v-for="(p, i) in profile">
-            <v-divider
-              v-if="p.divider"
-              :key="`divider-${i}`"
-              class="mb-2 mt-2"
-            />
+          <v-icon>mdi-account</v-icon>
+        </v-btn>
+      </template>
 
-            <app-bar-item
-              v-else
-              :key="`item-${i}`"
-              to="/home/users/profile"
-            >
-              <v-list-item-title v-text="p.title" />
-            </app-bar-item>
-          </template>
-        </v-list>
-      </v-menu>
-    </v-app-bar>
-  </v-app>
+      <v-list
+        :tile="false"
+        flat
+        nav
+      >
+        <template v-for="(p, i) in profile">
+          <v-divider
+            v-if="p.divider"
+            :key="`divider-${i}`"
+            class="mb-2 mt-2"
+          />
+
+          <app-bar-item
+            v-else
+            :key="`item-${i}`"
+            to="/home/users/profile"
+          >
+            <v-list-item-title v-text="p.title" />
+          </app-bar-item>
+        </template>
+      </v-list>
+    </v-menu>
+  </v-app-bar>
 </template>
 
 <script>
