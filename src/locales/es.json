@@ -6,6 +6,7 @@
   "components": "Componentes",
   "ct": "CT",
   "dashboard": "Dashboard",
+  "home": "Casa",
   "dtables": "Tablas de datos",
   "eforms": "formularios extendidos",
   "error": "Pagina de error",
@@ -88,11 +89,6 @@
  "desct":"Descuento",
  "actions":"Acciones"
 },
-"profile":{
-  "avatar": "Tania Andrew",
-  "my-profile": "Mi perfil",
-  "edit-profile": "Editar Perfil"
- },
  "crud":{
   "create":"Crear",
   "edit":"Editar",
