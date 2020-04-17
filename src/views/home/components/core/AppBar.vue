@@ -2,7 +2,7 @@
   <v-app-bar
     absolute
     app
-    color="info"
+    color="primary"
     flat
     height="75"
     style="width: auto;"
@@ -12,12 +12,12 @@
     >
       <!--LOGO DE LA EMPRESA-->
       <v-img
-        :src="require('@/assets/img/logo1GP.png')"
+        :src="require('@/assets/img/Imagen1.png')"
         class="mr-5"
         contain
-        height="100"
+        height="350"
         width="500"
-        max-width="100"
+        max-width="150"
         @click="$vuetify.goTo(0)"
       />
     </v-toolbar-title>
@@ -27,7 +27,7 @@
         class="ml-2"
         min-width="0"
         text
-        to=""
+        to="/p/home"
       >
         Home
         <v-icon right>
@@ -49,9 +49,9 @@
         class="ml-2"
         min-width="0"
         text
-        to=""
+        to="/p/catalogue"
       >
-        Articles
+        Catalogue
         <v-icon right>
           mdi-cart
         </v-icon>

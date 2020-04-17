@@ -465,6 +465,62 @@
           </div>
         </v-card-text>
       </v-col>
+
+      <!--SECCION DE 3-->
+      <v-col class="col-12 col-md-4 col-sm-12">
+        <v-row>
+          <v-col class="col-12 col-sm-3 pr-4">
+            <v-icon class="display-2">
+              mdi-truck
+            </v-icon>
+          </v-col>
+          <v-col class="col-12 col-sm-9 pr-4">
+            <h3 class="font-weight-light">
+              FREE SHIPPING & RETURN
+            </h3>
+            <p class="font-weight-thin">
+              Free Shipping over $300
+            </p>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col class="col-12 col-md-4 col-sm-12">
+        <v-row>
+          <v-col class="col-12 col-sm-3 pr-4 float-right">
+            <v-icon class="display-2">
+              mdi-cash-usd
+            </v-icon>
+          </v-col>
+          <v-col class="col-12 col-sm-9 pr-4">
+            <h3 class="font-weight-light">
+              MONEY BACK GUARANTEE
+            </h3>
+            <p class="font-weight-thin">
+              30 Days Money Back Guarantee
+            </p>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col class="col-12 col-md-4 col-sm-12">
+        <v-row>
+          <v-col class="col-12 col-sm-3 pr-4">
+            <v-img
+              height="50%"
+              class="mr-3"
+              :src="require('@/assets/img/4.jpg')"
+              @click="$vuetify.goTo(0)"
+            />
+          </v-col>
+          <v-col class="col-12 col-sm-9 pr-4">
+            <h3 class="font-weight-light">
+              020-800-456-747
+            </h3>
+            <p class="font-weight-thin">
+              24/7 Available Support
+            </p>
+          </v-col>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -476,16 +532,16 @@
       return {
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            src: require('@/assets/img/heineken9.jpg'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            src: require('@/assets/img/heineken11.jpeg'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+            src: require('@/assets/img/heineken6.jpg'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+            src: require('@/assets/img/Heineken1.jpg'),
           },
         ],
       }

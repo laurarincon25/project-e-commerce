@@ -19,12 +19,12 @@ export default new Router({
         {
           name: 'About',
           path: 'about',
-          component: () => import('@/views/home/ii/About'),
+          component: () => import('@/views/home/pages/About'),
         },
         {
-          name: 'Articles',
-          path: 'articles',
-          component: () => import('@/views/home/ii/Articles'),
+          name: 'Catalogue',
+          path: 'catalogue',
+          component: () => import('@/views/home/pages/Catalogue'),
         },
       ],
     },
