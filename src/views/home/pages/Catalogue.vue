@@ -216,7 +216,7 @@
                     >
                       <v-btn
                         v-if="hover"
-                        href="/product"
+                        to="/p/detailproduct"
                         class=""
                         outlined
                       >
@@ -228,7 +228,7 @@
                 <v-card-text class="text--primary">
                   <div>
                     <a
-                      href="/product"
+                      to="/p/detailproduct"
                       style="text-decoration: none"
                     >
                       {{ pro.name }}

@@ -26,6 +26,11 @@ export default new Router({
           path: 'catalogue',
           component: () => import('@/views/home/pages/Catalogue'),
         },
+        {
+          name: 'DetailProduct',
+          path: 'detailproduct',
+          component: () => import('@/views/home/pages/DetailProduct'),
+        },
       ],
     },
     /* {
