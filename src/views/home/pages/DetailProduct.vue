@@ -36,7 +36,7 @@
           </p>
           <v-card-actions class="pa-0">
             <p class="headline font-weight-light pt-3">
-              $65.00
+              $65.000
               <del
                 style=""
                 class="subtitle-1 font-weight-thin"
